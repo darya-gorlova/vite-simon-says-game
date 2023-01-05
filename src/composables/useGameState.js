@@ -129,7 +129,7 @@ const gameState = {
     this.level = ++this.level;
     this.humanSequence = [];
     this.msg = text + this.level;
-    // await this.delay(2000);
+    await this.delay(2000);
     this.startGame();
   },
 

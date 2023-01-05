@@ -1,13 +1,23 @@
+<template>
+  <main class="flex flex-col place-items-center">
+    <message-component />
+    <tiles-component />
+    <button-component />
+  </main>
+</template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import MessageComponent from "./components/MessageComponent.vue";
 import TilesComponent from "./components/TilesComponent.vue";
+import ButtonComponent from "./components/ButtonComponent.vue";
 import { useGameState } from "./composables/useGameState.js";
 export default defineComponent({
   name: "App",
   components: {
-    TilesComponent,
     MessageComponent,
+    TilesComponent,
+    ButtonComponent,
   },
   setup() {
     return {
@@ -17,19 +27,15 @@ export default defineComponent({
 });
 </script>
 
-<template>
-  <!-- <div id="#app"> -->
-  <!-- <main> -->
-    <main class="flex flex-col place-items-center">
-      <message-component />
-      <tiles-component />
-      <button
-        class="text-xl w-24 bg-green-500 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
-        :disabled="isDisabledBtn"
-        @click="startGame"
-      >
-        start
-      </button>
-    </main>
-  <!-- </div> -->
-</template>
+<style>
+body {
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  margin: auto;
+}
+</style>
