@@ -7,7 +7,7 @@
       v-for="tile in tiles"
       class="form-3D w-44 h-44 m-1"
       :key="tile.id"
-      :class="[tile.bgcolor, { activated: tile.isActivated }]"
+      :class="[tile.bgcolor, { activated: tile.isActivated }, {'cursor-pointer': !isDisabledTileContainer}]"
       @click="humanPlays(tile)"
     />
   </div>
