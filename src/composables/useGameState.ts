@@ -113,8 +113,7 @@ const gameState = {
     }
     while (gameState.humanSequenceHasCorrectLength()) {
       gameState.moveToNextLevel(
-        "Congratulations! You passed to the next level: "
-      );
+        "Congratulations! You passed");
       gameState.isDisabledTileContainer.value = true;
       return;
     }
@@ -148,7 +147,7 @@ const gameState = {
   async moveToNextLevel(text: string) {
     gameState.level.value = ++this.level.value;
     gameState.humanSequence.value = [];
-    gameState.msg.value = text + this.level.value;
+    gameState.msg.value = text;
     await gameState.delay(2000);
     gameState.startGame();
   },

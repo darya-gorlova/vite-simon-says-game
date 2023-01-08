@@ -1,11 +1,11 @@
 <template>
   <div
-    class="m-5 grid grid-cols-2 gap-1 place-items-center"
+    class="tile-container"
     :class="{ 'pointer-events-none': isDisabledTileContainer }"
   >
     <div
       v-for="tile in tiles"
-      class="form-3D w-44 h-44 m-1"
+      class="tile"
       :key="tile.id"
       :class="[tile.bgcolor, { activated: tile.isActivated }, {'cursor-pointer': !isDisabledTileContainer}]"
       @click="humanPlays(tile)"
@@ -24,3 +24,15 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="postcss">
+.tile-container {
+  @apply grid grid-cols-2 gap-1 m-5 place-items-center;
+}
+.tile {
+  @apply m-1 shadow-form-3D hover:shadow-form-3D-hover rounded-xl w-44 h-44;
+}
+.activated {
+  @apply opacity-60 translate-y-1;
+}
+</style>

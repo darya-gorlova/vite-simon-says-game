@@ -1,7 +1,6 @@
 <template>
   <button
-    class="form-3D text-xl font-normal w-24 px-5 py-2 bg-green-500 disabled:opacity-70"
-    :class="{ 'pointer-events-none': isDisabledBtn }"
+    class="button"
     :disabled="isDisabledBtn"
     @click="startGame"
   >
@@ -21,4 +20,9 @@ export default defineComponent({
 });
 </script>
 
+<style lang="postcss">
+.button {
+  @apply w-24 px-5 py-2 text-xl font-normal bg-green-500 shadow-form-3D hover:shadow-form-3D-hover rounded-xl disabled:opacity-60 disabled:translate-y-1 disabled:pointer-events-none;
+}
+</style>
 
